@@ -1,0 +1,6 @@
+-the first line in a go source file has to be:
+  package name
+  -all files in the same package must have the same name
+  -should also be the last element in the path (the directory name)
+  -executable commands have to use package main
+  
