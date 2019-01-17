@@ -1,6 +1,11 @@
--the first line in a go source file has to be:
+GENERAL
+  -the first line in a go source file has to be:
   package name
   -all files in the same package must have the same name
   -should also be the last element in the path (the directory name)
   -executable commands have to use package main
   
+TESTING
+  -testing files must be named like _test.go
+  -testing functions must be named like TestXXX with signature func (t *testing.T)
+  -if t.Error or t.Fail is called, the test is failed
