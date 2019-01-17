@@ -1,0 +1,22 @@
+#set go workspace path
+export GOPATH=$HOME/projects
+
+#add workspace bin to path
+export PATH=$PATH:$GOPATH/bin
+
+#create directory in workspace to contain source code
+mkdir -p $GOPATH/src/github.com/mielah
+
+#FOR LEARNING: create new package path
+$ mkdir $GOPATH/src/github.com/mielah/hello
+  #Go to that directory, create a file called hello.go and add:
+  #package main
+  #
+  #import "fmt"
+  #
+  #func main() {
+  #  fmt.Println("Hello, world.")
+  #}
+  
+  #build and install the program
+  go install github.com/user/hello
