@@ -1,3 +1,6 @@
+#install golang
+sudo yum install -y golang
+
 #set go workspace path
 export GOPATH=$HOME/projects
 
@@ -8,7 +11,7 @@ export PATH=$PATH:$GOPATH/bin
 mkdir -p $GOPATH/src/github.com/mielah
 
 #FOR LEARNING: create new package path
-$ mkdir $GOPATH/src/github.com/mielah/hello
+  mkdir $GOPATH/src/github.com/mielah/hello
   #Go to that directory, create a file called hello.go and add:
   #package main
   #
@@ -17,6 +20,52 @@ $ mkdir $GOPATH/src/github.com/mielah/hello
   #func main() {
   #  fmt.Println("Hello, world.")
   #}
-  
+
   #build and install the program
   go install github.com/user/hello
+
+  #run this to execute
+  $GOPATH/bin/hello
+  #or this
+  hello
+
+  #Different program
+  mkdir $GOPATH/src/github.com/mielah/stringutil
+
+  #create a reverse.go in that directory and add this to the file:
+  #// Package stringutil contains utility functions for working with strings.
+  #package stringutil
+  #
+  #// Reverse returns its argument string reversed rune-wise left to right.
+  #func Reverse(s string) string {
+  #  r := []rune(s)
+  #  for i, j := 0, len(r)-1; i < len(r)/2; i, j = i+1, j-1 {
+  #    r[i], r[j] = r[j], r[i]
+  #  }
+  #  return string(r)
+  #}
+
+  #run go install
+  go build github.com/mielah/stringutil
+  #doesn't create an output file but it saves the compiled package into the local build 
+
+  #add this to hello.go
+  #package main
+
+  #import (
+  #  "fmt"
+  #
+  #  "github.com/user/stringutil"
+  #)
+  #
+  #func main() {
+  #  fmt.Println(stringutil.Reverse("!oG ,olleH"))
+  #}
+
+  #install the hello program
+  go install github.com/mielah/hello
+
+  #now run
+  hello
+  
+  
