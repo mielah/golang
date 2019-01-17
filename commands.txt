@@ -69,3 +69,36 @@ mkdir -p $GOPATH/src/github.com/mielah
   hello
   
   
+  #Now use the testing framework
+  #test files must end in _test.go
+  
+  #create reverse_test.go and paste code
+  #package stringutil
+  #
+  #import "testing"
+  #
+  #func TestReverse(t *testing.T) {
+  #  cases := []struct {
+  #    in, want string
+  #  }{
+  #    {"Hello, world", "dlrow ,olleH"},
+  #    {"Hello, 世界", "界世 ,olleH"},
+  #    {"", ""},
+  #  }
+  #  for _, c := range cases {
+  #    got := Reverse(c.in)
+  #    if got != c.want {
+  #      t.Errorf("Reverse(%q) == %q, want %q", c.in, got, c.want)
+  #    }
+  #  }
+  }
+  
+  #run test
+  go test github.com/mielah/stringutil
+  
+  #fetching remote packages
+  #if it already exists then acts like go install
+  go get github.com/golang/example/hello
+  
+  #execute
+  $GOPATH/bin/hello
