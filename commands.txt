@@ -105,5 +105,9 @@ mkdir -p $GOPATH/src/github.com/mielah
   #if it already exists then acts like go install
   go get github.com/golang/example/hello
   
+  
+ #you can run a main.go file without installing
+ go run *.go 
+  
   #execute
   $GOPATH/bin/hello
