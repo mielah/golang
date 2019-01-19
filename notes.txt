@@ -1,0 +1,41 @@
+GENERAL
+  -the first line in a go source file has to be:
+  package name
+  -all files in the same package must have the same name
+  -should also be the last element in the path (the directory name)
+  -executable commands have to use package main
+  -Execute "go get" in the same directory as your go files to add any imports to workspace
+
+
+TESTING
+  -testing files must be named like _test.go
+  -testing functions must be named like TestXXX with signature func (t *testing.T)
+  -if t.Error or t.Fail is called, the test is failed
+
+
+
+SYNTAX
+  -Creating an object
+    type objName struct {
+      property  type
+      ...
+    }
+    
+  -Using struct to define another type
+    type objTwo objName[]
+    
+  -Initialize an objTwo
+    var obj2Instance = objTwo {
+        objName {
+          "property1",
+          "property2",
+          3
+          ...
+        }
+    }
+     
+    -_ is a blank identifier if you don't need one of the return values
+    
+    -range variant of for loops:
+      for i, v := range arrayName
+      -i is the index, v is the element
