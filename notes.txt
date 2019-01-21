@@ -52,4 +52,32 @@ SYNTAX
     -Adding a function for an object
       func (cr *Car) value() float64 {}
         -The (cr *Car) portion means we can use the function like a.value()
-      
+    
+    -When defining a struct, a first uppercase letter means public otherwise private to package
+    -The Is-a instead of Has-a relationship
+      Instead of 
+        type Android struct { #Android is public, android would be private
+          Person Person
+          Name  string
+        }
+       DO: (leave the property name empty)
+        type Android struct {
+          Person
+          Name string
+        }
+        
+     -Person functions can be accessed like 
+        a := new(Android)
+        a.Person.talk()
+        #or
+        a.talk()
+        
+        
+      -Interface syntax:
+        type Shape interface {
+          #mandatory fields/methods here
+        }
+        
+        -Functions for interfaces
+        func totalArea(shapes ...Shape) float64 {} #arg can be any struct that implements Shape interface
+        #...Shape means the input can be a list/array of Shape objects (use for range to access them all)
