@@ -81,3 +81,5 @@ SYNTAX
         -Functions for interfaces
         func totalArea(shapes ...Shape) float64 {} #arg can be any struct that implements Shape interface
         #...Shape means the input can be a list/array of Shape objects (use for range to access them all)
+
+//SERVING THE ACCOUNT OVER HTTP OF PART 3 -- STOP POINT
