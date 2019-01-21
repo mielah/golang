@@ -5,6 +5,8 @@ GENERAL
   -should also be the last element in the path (the directory name)
   -executable commands have to use package main
   -Execute "go get" in the same directory as your go files to add any imports to workspace
+  -Gorilla mux is basically like the ang2+ router 
+    -Matches incoming request to list of routes and calls the handler that matches the URL and other conditions
 
 
 TESTING
@@ -39,3 +41,15 @@ SYNTAX
     -range variant of for loops:
       for i, v := range arrayName
       -i is the index, v is the element
+      
+      
+    -Creating an instance of a struct
+      var a Car
+      a := new(Car)
+      a := Car{brand: "Tesla", year: 2016, color: "white"}
+      a := Car{"Tesla", 2016, "white"}
+      
+    -Adding a function for an object
+      func (cr *Car) value() float64 {}
+        -The (cr *Car) portion means we can use the function like a.value()
+      
