@@ -7,12 +7,14 @@ GENERAL
   -Execute "go get" in the same directory as your go files to add any imports to workspace
   -Gorilla mux is basically like the ang2+ router 
     -Matches incoming request to list of routes and calls the handler that matches the URL and other conditions
+  -strconv.Itoa() converts int to string
 
 
 TESTING
   -testing files must be named like _test.go
   -testing functions must be named like TestXXX with signature func (t *testing.T)
   -if t.Error or t.Fail is called, the test is failed
+  -To run tests in all directories: go test ./...
 
 
 
@@ -82,4 +84,5 @@ SYNTAX
         func totalArea(shapes ...Shape) float64 {} #arg can be any struct that implements Shape interface
         #...Shape means the input can be a list/array of Shape objects (use for range to access them all)
 
-//SERVING THE ACCOUNT OVER HTTP OF PART 3 -- STOP POINT
+      -Retrieving variables from url path:
+        -var varA = mux.Vars(r)["paramName"] //where r = *http.Request
