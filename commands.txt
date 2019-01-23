@@ -111,3 +111,12 @@ mkdir -p $GOPATH/src/github.com/mielah
   
   #execute
   $GOPATH/bin/hello
+
+  #When building a go executable for linux and specifying executable name
+  export CGO_ENABLED=0 GOOS=linux GOARCH=amd64
+  go build -o goExeName
+  #change GOOS back to what it was if not using linux
+  
+  #build the docker image from on directory up (in accountservice's parent)
+  sudo docker build -t mielah/accountservice accountservice/
+  #use docker push to make the image visible to other 
