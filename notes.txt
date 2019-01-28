@@ -86,3 +86,23 @@ SYNTAX
 
       -Retrieving variables from url path:
         -var varA = mux.Vars(r)["paramName"] //where r = *http.Request
+
+      -Backtick used in structs for use in json.Marshal
+        type NetworkInterface struct {
+            Gateway              string `json:"gateway"`
+            IPAddress            string `json:"ip"`
+            IPPrefixLen          int    `json:"ip_prefix_len"`
+            MacAddress           string `json:"mac"`
+            ...
+        }
+        
+        n := NetworkInterface{
+           Gateway : "foo"
+        }
+        json.Marshal(n)
+        // will output `{"gateway":"foo",...}`
+        
+        
+       -Using a slice as a variadic function parameter:
+         numbers := []int{0,1,2}
+         testFunc(numbers...)
